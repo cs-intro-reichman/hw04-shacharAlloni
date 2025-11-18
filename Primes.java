@@ -1,7 +1,7 @@
 public class Primes {
     public static void main(String[] args) {
         int range = Integer.parseInt(args[0]);
-        boolean[] arr = new boolean[range];
+        boolean[] arr = new boolean[range + 1];
         int count = 0;
 
         arr = setTrue(arr);
@@ -28,7 +28,7 @@ public class Primes {
                 count++;
             }
         }
-        double per = (count / (double) range) * 100;
+        double per = ((double) count / range) * 100;
         System.out.println("There are " + count + " primes between 2 and " + range + " (" + (int) per + "% are primes)");
 
         
