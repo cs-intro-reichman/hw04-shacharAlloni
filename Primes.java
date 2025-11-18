@@ -7,6 +7,8 @@ public class Primes {
         arr = setTrue(arr);
         int i = 2;
 
+        System.out.println("Prime numbers up to " + range + ":");
+
         while (i < arr.length) { //Find the prime numbers according to the algoritem.
             int j = i + 1;
             while (j < arr.length) {
