@@ -205,7 +205,7 @@ public class ArrCharOps {
         return -1;
     }
 
-    public static boolean isValidString(String str1, String str2) {
+    public static boolean isValidString(String str1, String str2) { 
         boolean isValid = true;
 
         if (str1.isEmpty() || str2.isEmpty()) {

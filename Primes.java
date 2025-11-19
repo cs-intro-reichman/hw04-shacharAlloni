@@ -24,13 +24,13 @@ public class Primes {
             i++;
         }
         
-        for (int index = 0; index < arr.length; index++) {
+        for (int index = 0; index < arr.length; index++) { //Print the prime numbers.
             if (arr[index] == true) {
                 System.out.println(index);
                 count++;
             }
         }
-        double per = ((double) count / range) * 100;
+        double per = ((double) count / range) * 100; //Calculate the percentage of prime numbers.
         System.out.println("There are " + count + " primes between 2 and " + range + " (" + (int) per + "% are primes)");
 
         

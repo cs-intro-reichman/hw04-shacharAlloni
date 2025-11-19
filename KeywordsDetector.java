@@ -33,10 +33,10 @@ public class KeywordsDetector {
         }  
     }
 
-    public static boolean hasKeyword(String sentence, String keyword) {
+    public static boolean hasKeyword(String sentence, String keyword) { // Check if a keyword exists in a sentence.
         sentence = sentence.toLowerCase();
         keyword = keyword.toLowerCase();
-        if (sentence.contains(keyword) == true) {
+        if (sentence.contains(keyword) == true) { // If the sentence contains the keyword, return true.
             return true;
         }
         return false;
