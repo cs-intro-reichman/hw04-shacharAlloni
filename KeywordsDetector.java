@@ -20,7 +20,26 @@ public class KeywordsDetector {
 
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
-    public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+    public static void detectAndPrint(String[] sentences, String[] keywords) {      
+        for (int i = 0; i < sentences.length; i++) { // Run over all the sentences.
+            boolean isPrinted = false;
+            for (int j = 0; j < keywords.length; j++) { // Check for every word at the keywords array if it exists in the sentence.
+                if (hasKeyword(sentences[i], keywords[j]) == true && isPrinted == false) {
+                    System.out.println(sentences[i]);
+                    isPrinted = true;
+                }
+                
+            }
+        }  
+    }
+
+    /** A function that check if a keyword exists in a sentence. */
+    public static boolean hasKeyword(String sentence, String keyword) {
+        sentence = sentence.toLowerCase();
+        keyword = keyword.toLowerCase();
+        if (sentence.contains(keyword) == true) { // If the sentence contains the keyword, return true.
+            return true;
+        }
+        return false;
     }
 }
