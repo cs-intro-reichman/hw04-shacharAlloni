@@ -18,15 +18,41 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        str = str.toLowerCase();
-        return str;
+        char[] chars = new char[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+
+            // If uppercase A–Z, convert manually
+            if (c >= 'A' && c <= 'Z') {
+                c = (char) (c + 32);
+            }
+
+            chars[i] = c;
+        }
+        String result = new String(chars);
+        return result;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        if (str1.contains(str2)) {
+        if (str1 == null || str2 == null)
+            return false;
+        if (str2.length() == 0) // empty string is always contained
             return true;
+        if (str2.length() > str1.length())
+            return false;
+
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            int j = 0;
+            while (j < str2.length() && str1.charAt(i + j) == str2.charAt(j)) {
+                j++;
+            }
+            if (j == str2.length()) {
+                return true; // full match found
+            }
         }
-        return false;
+        return false; // no match
     }
 }
+
